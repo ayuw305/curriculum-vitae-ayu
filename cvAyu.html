@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Ayu Dwi Nengtias</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-burgundy: #A91B60;
+  --soft-rose: #E8B4CB;
+  --cream-white: #FFFFFF;
+  --warm-gold: #D4AF37;
+  --deep-navy: #1A365D;
+  --light-gray: #F7FAFC;
+  --text-dark: #2D3748;
+  --text-light: #718096;
+  --accent-pink: #FDF2F8;
+  --bright-accent: #EC4899;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #EDF2F7 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(169, 27, 96, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
+  z-index: -1;
+  animation: float 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #831843 0%, #A91B60 30%, #BE185D 70%, #7B1E3B 100%);
+  color: white;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(131, 24, 67, 0.4);
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.03) 10px,
+    rgba(255,255,255,0.03) 20px
+  );
+  animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(50px); }
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 2px;
+}
+
+nav {
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+nav a {
+  color: white;
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+nav a:hover {
+  background: var(--warm-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 169, 110, 0.4);
+  color: var(--deep-navy);
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  margin: 3rem auto;
+  padding: 3rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 
+    0 20px 60px rgba(139, 21, 56, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-burgundy), var(--bright-accent), var(--warm-gold));
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 80px rgba(169, 27, 96, 0.15),
+    0 12px 40px rgba(236, 72, 153, 0.1);
+}
+
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-burgundy);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bright-accent), var(--warm-gold));
+  border-radius: 2px;
+}
+
+/* Home Section */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-text {
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.8), rgba(232, 180, 203, 0.4));
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--bright-accent);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.profile-text::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 4rem;
+  color: var(--bright-accent);
+  opacity: 0.3;
+  font-family: 'Playfair Display', serif;
+}
+
+.profile-image {
+  text-align: center;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--bright-accent);
+  box-shadow: 
+    0 0 0 3px white,
+    0 0 0 6px var(--warm-gold),
+    0 15px 35px rgba(169, 27, 96, 0.25),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
+  background: white;
+  padding: 3px;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 
+    0 0 0 3px white,
+    0 0 0 8px var(--bright-accent),
+    0 20px 50px rgba(236, 72, 153, 0.35),
+    0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--warm-gold);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+th {
+  background: linear-gradient(135deg, var(--primary-burgundy), #6B1229);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(139, 21, 56, 0.1);
+  transition: all 0.3s ease;
+  vertical-align: top;
+}
+
+tr:nth-child(even) {
+  background: rgba(232, 213, 217, 0.3);
+}
+
+tr:hover {
+  background: rgba(139, 21, 56, 0.05);
+  transform: scale(1.01);
+}
+
+td:first-child {
+  font-weight: 600;
+  color: var(--primary-burgundy);
+  min-width: 180px;
+  width: 30%;
+}
+
+td:last-child {
+  width: 70%;
+}
+
+/* Achievement and Organization Styling */
+.achievement-item, .organization-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-item::before, .organization-item::before {
+  content: '•';
+  color: var(--bright-accent);
+  font-weight: bold;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.achievement-year, .organization-year {
+  color: var(--warm-gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skills li {
+  background: linear-gradient(135deg, var(--soft-rose), var(--accent-pink));
+  color: var(--primary-burgundy);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(139, 21, 56, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 21, 56, 0.1);
+}
+
+.skills li:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, var(--warm-gold), #B8965C);
+  color: white;
+  box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+}
+
+.skills li i {
+  margin-right: 0.5rem;
+}
+
+/* Contact Section */
+#kontak p, #sosial p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(232, 213, 217, 0.3);
+  border-radius: 10px;
+  border-left: 4px solid var(--warm-gold);
+  transition: all 0.3s ease;
+}
+
+#kontak p:hover, #sosial p:hover {
+  background: rgba(139, 21, 56, 0.05);
+  transform: translateX(5px);
+}
+
+#sosial a {
+  color: var(--primary-burgundy);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#sosial a:hover {
+  background: var(--warm-gold);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--deep-navy) 0%, #1A252F 100%);
+  color: var(--warm-gold);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-burgundy), var(--warm-gold), var(--soft-rose));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav a {
+    margin: 0.3rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .card {
+    margin: 2rem 1rem;
+    padding: 2rem;
+  }
+  
+  #home {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  table, th, td {
+    font-size: 0.9rem;
+  }
+  
+  td:first-child {
+    width: 35%;
+  }
+  
+  td:last-child {
+    width: 65%;
+  }
+  
+  .skills {
+    justify-content: center;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AYU DWI NENGTIAS</h1>
+    <nav>
+      <a href="#home"><i class="fas fa-house"></i> Home</a>
+      <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
+      <a href="#kontak"><i class="fas fa-envelope"></i> Kontak</a>
+      <a href="#sosial"><i class="fas fa-hashtag"></i> Sosial</a>
+    </nav>
+  </header>
+
+  <section id="home" class="card">
+    <div class="profile-content">
+      <h2><i class="fas fa-user"></i> Tentang Saya</h2>
+      <div class="profile-text">
+        <p>Halo! Saya Ayu Dwi Nengtias, mahasiswa Teknik Informatika Universitas Muhammadiyah Riau yang passionate dalam pengembangan web dan computer vision. Saya memiliki dedikasi tinggi dalam teknologi dan selalu antusias untuk terus belajar dan berkembang dalam dunia digital.</p>
+      </div>
+    </div>
+    <div class="profile-image">
+      <img src="ayu.png" alt="Foto Ayu" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRDRBNkIzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTA1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM4QjE1MzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZvdG8gQXl1PC90ZXh0Pgo8L3N2Zz4K'">
+    </div>
+  </section>
+
+  <section id="cv" class="card">
+    <h2><i class="fas fa-id-card"></i> Curriculum Vitae</h2>
+    <table>
+      <tr>
+        <th colspan="2">Biodata Pribadi</th>
+      </tr>
+      <tr><td>Nama Lengkap</td><td>Ayu Dwi Nengtias</td></tr>
+      <tr><td>Tempat/Tanggal Lahir</td><td>Sei. Guntung, 30 Mei 2004</td></tr>
+      <tr><td>Alamat</td><td>Pekanbaru, Riau</td></tr>
+
+      <tr><th colspan="2">Riwayat Pendidikan</th></tr>
+      <tr><td>Sekolah Dasar</td><td>SD 023 DWIPAABADI</td></tr>
+      <tr><td>Sekolah Menengah Pertama</td><td>SMP DWIPAABADI</td></tr>
+      <tr><td>Sekolah Menengah Atas</td><td>SMAS Darul Furqan</td></tr>
+      <tr><td>Perguruan Tinggi</td><td>Universitas Muhammadiyah Riau<br><em>Teknik Informatika</em></td></tr>
+
+      <tr><th colspan="2">Pengalaman & Prestasi</th></tr>
+      <tr><td>Prestasi Akademik</td><td><div class="achievement-item">Mahasiswa Berprestasi - Universitas Muhammadiyah Riau <span class="achievement-year">(2024)</span></div></td></tr>
+      <tr><td>Prestasi Kompetisi</td><td><div class="achievement-item">Juara 3 MTQ Cabang Fahmil Qur'an - Tingkat Kabupaten, Tanjung Batu <span class="achievement-year">(2020)</span></div></td></tr>
+      <tr><td>Program Kewirausahaan</td><td><div class="achievement-item">Lolos Pendanaan Program P2MW (Program Pengembangan Kewirausahaan Mahasiswa) - Kementerian Pendidikan RI <span class="achievement-year">(2024)</span></div></td></tr>
+      <tr><td>Pengalaman Mengajar</td><td><div class="achievement-item">Tutor Mengaji Privat untuk Anak-anak & Remaja <span class="achievement-year">(sejak semester 5)</span></div></td></tr>
+
+      <tr><th colspan="2">Organisasi & Kegiatan</th></tr>
+      <tr><td>Organisasi Santri <span class="organization-year">(2021)</span></td><td>
+        <div class="organization-item">Pengurus Bidang Pendidikan dan Keagamaan</div>
+        <div class="organization-item">Mengelola program pendidikan dan kegiatan keagamaan</div>
+      </td></tr>
+      <tr><td>Tim P2MW <span class="organization-year">(2024)</span></td><td>
+        <div class="organization-item">Anggota Tim Program Pengembangan Kewirausahaan Mahasiswa</div>
+        <div class="organization-item">Bertanggung jawab di bidang keuangan dalam program wirausaha mahasiswa</div>
+      </td></tr>
+
+      <tr><th colspan="2">Keahlian Teknis</th></tr>
+      <tr><td colspan="2">
+        <ul class="skills">
+          <li><i class="fab fa-html5"></i> HTML5</li>
+          <li><i class="fab fa-css3-alt"></i> CSS3</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fas fa-microchip"></i> OpenCV</li>
+          <li><i class="fas fa-map-marked-alt"></i> Folium (GIS)</li>
+          <li><i class="fas fa-flask"></i> Google Colab</li>
+          <li><i class="fas fa-database"></i> Database Management</li>
+          <li><i class="fas fa-code"></i> Web Development</li>
+        </ul>
+      </td></tr>
+    </table>
+  </section>
+
+  <section id="kontak" class="card">
+    <h2><i class="fas fa-address-book"></i> Hubungi Saya</h2>
+    <p><i class="fas fa-envelope"></i> ayudwinengtias@gmail.com</p>
+    <p><i class="fas fa-phone"></i> 0821-7165-3173</p>
+    <p><i class="fas fa-map-marker-alt"></i> Pekanbaru, Riau, Indonesia</p>
+    <p><i class="fas fa-graduation-cap"></i> Mahasiswa Teknik Informatika - Universitas Muhammadiyah Riau</p>
+  </section>
+
+  <section id="sosial" class="card">
+    <h2><i class="fas fa-globe"></i> Media Sosial & Portfolio</h2>
+    <p>
+      <a href="https://www.instagram.com/ayunngts_" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="https://www.linkedin.com/in/ayu-dwi-nengtias-587461345" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+
+      <a href="https://github.com/ayuw305" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+
+      <a href="https://ayunengtias.github.io/" target="_blank">
+        <i class="fas fa-briefcase"></i> Portfolio
+      </a>
+
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ayu Dwi Nengtias - Teknik Informatika UMRI</p>
+  </footer>
+</body>
+</html>
